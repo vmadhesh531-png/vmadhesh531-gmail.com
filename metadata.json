@@ -1,0 +1,6 @@
+{
+  "name": "VK Corporate Submission Portal",
+  "description": "A comprehensive submission and progress tracking portal for corporate AI grants and projects, complete with user registration, administrative review, and status tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

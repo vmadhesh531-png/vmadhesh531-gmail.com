@@ -1,0 +1,145 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile in the corporate portal",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user ID"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "applicant",
+            "admin"
+          ],
+          "description": "System access role"
+        },
+        "department": {
+          "type": "string",
+          "description": "Corporate department"
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "name",
+        "role"
+      ]
+    },
+    "Application": {
+      "title": "Application",
+      "description": "Corporate AI/ML Project Proposal",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Proposal code"
+        },
+        "title": {
+          "type": "string",
+          "description": "Proposal title"
+        },
+        "applicantId": {
+          "type": "string",
+          "description": "ID of applicant user"
+        },
+        "applicantName": {
+          "type": "string",
+          "description": "Name of applicant"
+        },
+        "applicantEmail": {
+          "type": "string",
+          "description": "Email of applicant"
+        },
+        "department": {
+          "type": "string",
+          "description": "Target corporate department"
+        },
+        "category": {
+          "type": "string",
+          "description": "AI/ML category"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of problem"
+        },
+        "proposedSolution": {
+          "type": "string",
+          "description": "Proposed solution details"
+        },
+        "teamSize": {
+          "type": "number",
+          "description": "Proposed team size"
+        },
+        "budget": {
+          "type": "number",
+          "description": "Proposed budget"
+        },
+        "timeline": {
+          "type": "string",
+          "description": "Proposed timeline duration"
+        },
+        "expectedImpact": {
+          "type": "string",
+          "description": "Projected business impact"
+        },
+        "submittedAt": {
+          "type": "string",
+          "description": "Timestamp of initial submission"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Submitted",
+            "Under Review",
+            "Technical Review",
+            "Approved",
+            "Rejected"
+          ],
+          "description": "Workflow phase status"
+        },
+        "attachments": {
+          "type": "array",
+          "description": "Supporting documents list"
+        },
+        "reviewHistory": {
+          "type": "array",
+          "description": "Audit trail of governance updates"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "applicantId",
+        "applicantName",
+        "applicantEmail",
+        "department",
+        "category",
+        "description",
+        "submittedAt",
+        "status"
+      ]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Collection of registered corporate users"
+    },
+    "applications/{appId}": {
+      "schema": "Application",
+      "description": "Collection of submitted proposals"
+    }
+  }
+}

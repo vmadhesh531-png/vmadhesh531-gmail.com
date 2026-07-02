@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global safety net (Default Deny)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions for static/schema validation
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidUser(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.email is string && data.email.size() <= 256
+        && data.name is string && data.name.size() <= 128
+        && (data.role == 'applicant' || data.role == 'admin')
+        && (!('department' in data) || (data.department is string && data.department.size() <= 128));
+    }
+
+    function isValidApplication(data) {
+      return data.id is string && data.id.size() <= 128
+        && data.title is string && data.title.size() <= 256
+        && data.applicantId is string && data.applicantId.size() <= 128
+        && data.applicantName is string && data.applicantName.size() <= 128
+        && data.applicantEmail is string && data.applicantEmail.size() <= 256
+        && data.department is string && data.department.size() <= 128
+        && data.category is string && data.category.size() <= 128
+        && data.description is string && data.description.size() <= 10000
+        && (!('proposedSolution' in data) || (data.proposedSolution is string && data.proposedSolution.size() <= 10000))
+        && (!('teamSize' in data) || (data.teamSize is int || data.teamSize is float))
+        && (!('budget' in data) || (data.budget is int || data.budget is float))
+        && (!('timeline' in data) || (data.timeline is string && data.timeline.size() <= 256))
+        && (!('expectedImpact' in data) || (data.expectedImpact is string && data.expectedImpact.size() <= 10000))
+        && data.submittedAt is string && data.submittedAt.size() <= 128
+        && (data.status == 'Submitted' || data.status == 'Under Review' || data.status == 'Technical Review' || data.status == 'Approved' || data.status == 'Rejected')
+        && data.attachments is list
+        && data.reviewHistory is list;
+    }
+
+    // Since our app operates fully server-side via Express API proxy endpoints
+    // (using the client-side Web SDK as an unauthenticated or default credentials runner),
+    // we authorize read and write access on the database level while securing individual
+    // document payloads with strict type, key, and bounds validations to prevent data pollution.
+    match /users/{userId} {
+      allow read: if true;
+      allow create, update: if isValidId(userId) && isValidUser(request.resource.data);
+      allow delete: if isValidId(userId);
+    }
+
+    match /applications/{appId} {
+      allow read: if true;
+      allow create, update: if isValidId(appId) && isValidApplication(request.resource.data);
+      allow delete: if isValidId(appId);
+    }
+  }
+}

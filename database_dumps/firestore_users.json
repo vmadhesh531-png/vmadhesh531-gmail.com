@@ -1,0 +1,33 @@
+[
+  {
+    "id": "usr_1",
+    "email": "applicant@company.ai",
+    "department": "Customer Experience Operations",
+    "name": "Sarah Jenkins",
+    "role": "applicant"
+  },
+  {
+    "id": "usr_2",
+    "department": "R&D Lab and Engineering",
+    "email": "innovator@company.ai",
+    "role": "applicant",
+    "name": "Dr. Marcus Vance"
+  },
+  {
+    "id": "usr_admin",
+    "name": "Chief AI Reviewer",
+    "role": "admin",
+    "email": "admin@company.ai",
+    "department": "AI Governance Board"
+  },
+  {
+    "id": "usr_phone_7812879464",
+    "phoneNumber": "7812879464",
+    "email": "phone_7812879464@vkcorporate.com",
+    "department": "R&D Lab and Engineering",
+    "authProvider": "phone",
+    "name": "max",
+    "password": "123456",
+    "role": "admin"
+  }
+]

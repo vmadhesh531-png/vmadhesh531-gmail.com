@@ -1,0 +1,147 @@
+[
+  {
+    "id": "APP-2026-001",
+    "expectedImpact": "10000000 invesment return 500000000",
+    "applicantId": "usr_1",
+    "title": "erp",
+    "submittedAt": "2026-07-02T07:07:47.787Z",
+    "applicantName": "Sarah Jenkins",
+    "reviewHistory": [
+      {
+        "actionByRole": "admin",
+        "actionBy": "Sarah Jenkins",
+        "timestamp": "2026-07-02T07:07:47.787Z",
+        "statusFrom": "None",
+        "statusTo": "Submitted",
+        "comments": "Proposal successfully registered in the secure ledger.",
+        "id": "rev_1782976067787"
+      }
+    ],
+    "budget": 500000,
+    "attachments": [
+      {
+        "type": "application/octet-stream",
+        "name": "ERP_DEVELOPMENT_GUIDE.md",
+        "size": "0.0 MB"
+      }
+    ],
+    "teamSize": 2,
+    "timeline": "12 Months (Strategic Initiative)",
+    "category": "Generative AI & LLMs",
+    "applicantEmail": "applicant@company.ai",
+    "description": "good",
+    "proposedSolution": "dooop",
+    "status": "Submitted",
+    "priority": "High",
+    "department": "Customer Experience Operations"
+  },
+  {
+    "id": "APP-2026-002",
+    "applicantEmail": "innovator@company.ai",
+    "category": "Computer Vision & OCR",
+    "description": "Manual inspection of physical parts on Assembly Line 4 results in a 4% defect slip rate, causing expensive product returns. We propose setting up high-speed industrial cameras paired with a customized edge convolutional neural network (CNN) to detect micro-cracks in real-time.",
+    "proposedSolution": "Installation of three high-definition synchronized focal lenses on Line 4. A lightweight CNN model trained on our proprietary historical defect dataset will perform inference locally at 60fps, raising an instant physical alarm and mechanical gateway diversion if a crack is spotted.",
+    "status": "Approved",
+    "department": "R&D Lab and Engineering",
+    "teamSize": 5,
+    "timeline": "6 Months (Standard Pilot)",
+    "applicantName": "Dr. Marcus Vance",
+    "submittedAt": "2026-06-22T10:00:00Z",
+    "reviewHistory": [
+      {
+        "actionBy": "Chief AI Reviewer",
+        "actionByRole": "admin",
+        "statusFrom": "Technical Review",
+        "timestamp": "2026-07-01T06:55:04.650Z",
+        "id": "rev_1782888904650",
+        "comments": "500000\n",
+        "statusTo": "Approved"
+      },
+      {
+        "actionBy": "Chief AI Reviewer",
+        "actionByRole": "admin",
+        "statusFrom": "Technical Review",
+        "timestamp": "2026-07-01T06:54:45.309Z",
+        "id": "rev_1782888885309",
+        "comments": "good",
+        "statusTo": "Technical Review"
+      },
+      {
+        "comments": "Proposal submitted. Requires local edge hardware deployment.",
+        "id": "rev_4",
+        "statusTo": "Submitted",
+        "statusFrom": "None",
+        "timestamp": "2026-06-22T10:00:00Z",
+        "actionBy": "Dr. Marcus Vance",
+        "actionByRole": "admin"
+      },
+      {
+        "actionBy": "Admin Board",
+        "actionByRole": "admin",
+        "comments": "Initial validation complete. Routing to hardware and engineering teams for edge review.",
+        "id": "rev_5",
+        "statusTo": "Under Review",
+        "statusFrom": "Submitted",
+        "timestamp": "2026-06-23T16:40:00Z"
+      },
+      {
+        "statusFrom": "Under Review",
+        "timestamp": "2026-06-26T09:12:00Z",
+        "comments": "Edge processing requirements are demanding. We need Marcus to specify heat dispersal limits of the camera enclosure on Line 4 and confirm physical clearance.",
+        "id": "rev_6",
+        "statusTo": "Technical Review",
+        "actionBy": "Hardware Committee (Tech Review)",
+        "actionByRole": "admin"
+      }
+    ],
+    "attachments": [
+      {
+        "size": "1.1 MB",
+        "name": "camera_specs_costing.docx",
+        "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      }
+    ],
+    "budget": 95000,
+    "expectedImpact": "Reduce defect slip rate from 4% to under 0.1%. Minimize assembly line stop-times by 22% by flagging structural defects prior to subsequent component layers.",
+    "applicantId": "usr_2",
+    "title": "Defect Detection via Computer Vision in Assembly Line 4"
+  },
+  {
+    "id": "APP-2026-003",
+    "status": "Approved",
+    "department": "Customer Experience Operations",
+    "applicantEmail": "applicant@company.ai",
+    "category": "NLP & Sentiment Analysis",
+    "description": "We currently review market trends manually, leading to delayed pricing strategies. This applet automates scraping of press releases, customer forums, and social media mentions of competitor products to score market sentiment in real-time.",
+    "proposedSolution": "Scraping pipeline hosted in cloud run parsing RSS and public social feeds. Sentiment indices are grouped by product category and updated hourly onto a sales forecasting dashboard.",
+    "teamSize": 2,
+    "timeline": "3 Months (Short Term MVP)",
+    "budget": 15000,
+    "attachments": [],
+    "submittedAt": "2026-06-28T14:22:00Z",
+    "applicantName": "Sarah Jenkins",
+    "reviewHistory": [
+      {
+        "statusFrom": "Submitted",
+        "timestamp": "2026-07-01T06:55:43.888Z",
+        "comments": "Technical specifications validated successfully. Funding authorized.",
+        "id": "rev_1782888943888",
+        "statusTo": "Approved",
+        "actionBy": "Chief AI Reviewer",
+        "actionByRole": "admin"
+      },
+      {
+        "statusFrom": "None",
+        "timestamp": "2026-06-28T14:22:00Z",
+        "id": "rev_7",
+        "comments": "Submitted initial proposal. Budget is extremely modest and setup is lightweight.",
+        "statusTo": "Submitted",
+        "actionBy": "Sarah Jenkins",
+        "actionByRole": "admin"
+      }
+    ],
+    "title": "NLP Competitor Sentiment Tracker & Sales Oracle",
+    "applicantId": "usr_1",
+    "expectedImpact": "Equip sales teams with dynamic competitor pricing counter-arguments 4 days faster than previous manual reports. Lift conversion rates by an expected 3.5%."
+  }
+]
